@@ -1,6 +1,10 @@
 @import "tailwindcss";
+@import "tailwindcss/preflight";
+@tailwind utilities;
+
 
 :root {
+  --dark : class
   --background: #ffffff;
   --foreground: #171717;
 }
