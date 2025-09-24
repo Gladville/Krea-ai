@@ -15,7 +15,7 @@ const tools = [
 ];
 
 const GenerateSection: FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   return (
     <section className=" px-6 pt-5 dark:bg-black">
       <div className="flex items-center justify-between mb-3">

@@ -10,22 +10,26 @@ export default function ThemeToggle() {
     return (
         <button className="cursor-pointer" onClick={() =>{setTheme(theme === "light" ? "dark" : "light")} }>
             {theme === "light" ? (
-                <Sun  width={24}
+                <Sun   width={24}
           height={24}
+          viewBox="0 0 24 24"
+          fill="none"
           stroke="currentColor"
           strokeWidth={2}
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="w-5 h-5"
+          className="lucide lucide-moon w-5 h-5"
          />
             ) : (
                 <MoonIcon  width={24}
           height={24}
+          viewBox="0 0 24 24"
+          fill="none"
           stroke="currentColor"
           strokeWidth={2}
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="w-5 h-5"
+          className="lucide lucide-moon w-5 h-5"
         />
             )}
      </button>
