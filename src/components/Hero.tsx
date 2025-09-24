@@ -39,6 +39,7 @@ const slides: Slide[] = [
 export default function HeroCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [slideWidth, setSlideWidth] = useState(100);
+ const [touchStartX, setTouchStartX] = useState(0); // 🔥 CHANGE: Ref for swipe
 
   useEffect(() => {
     const updateWidth = () => {
@@ -49,6 +50,29 @@ export default function HeroCarousel() {
     return () => window.removeEventListener("resize", updateWidth);
   }, []);
 
+   // 🔥 CHANGE: Keyboard arrow navigation
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "ArrowLeft") goToPrev();
+      if (e.key === "ArrowRight") goToNext();
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, []);
+
+  // 🔥 CHANGE: Swipe support
+  
+const handleTouchStart = (e: React.TouchEvent) => {
+  setTouchStartX(e.touches[0].clientX);
+};
+
+const handleTouchEnd = (e: React.TouchEvent) => {
+  const touchEndX = e.changedTouches[0].clientX;
+  if (touchStartX - touchEndX > 50) goToNext(); // swipe left
+  if (touchEndX - touchStartX > 50) goToPrev(); // swipe right
+};
+
+
   const goToPrev = () => {
     setCurrentIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
   };
@@ -58,11 +82,12 @@ export default function HeroCarousel() {
   };
 
   return (
-    <div className="relative w-full py-8 dark:bg-gray-900">
-      <div className="overflow-hidden rounded-2xl max-w-7xl mx-auto">
+    <div className="relative w-full px-4 py-8 dark:bg-gray-900">
+      <div className="overflow-hidden rounded-2xl max-w-7xl mx-auto" >
         <div
-          className="flex transition-transform duration-700 ease-in-out space-x-4"
-          style={{ transform: `translateX(-${currentIndex * slideWidth}%)` }}
+          className="flex transition-transform duration-700 ease-in-out space-x-4" style={{ transform: `translateX(-${currentIndex * slideWidth}%)` }}
+  onTouchStart={handleTouchStart}
+  onTouchEnd={handleTouchEnd}
         >
           {slides.map((slide) => (
             <div
@@ -75,7 +100,7 @@ export default function HeroCarousel() {
                 <img
                   src={slide.img}
                   alt={slide.title}
-                  className="w-full h-full object-contain md:object-cover rounded-2xl overflow-hidden"
+                  className="w-full h-full object-cover rounded-2xl overflow-hidden"
                 />
                 <div className="absolute top-4 left-4 bg-black/70 text-white text-xs px-2 py-1 rounded-full backdrop-blur-sm">
                   {slide.badge}
@@ -85,7 +110,7 @@ export default function HeroCarousel() {
                   <p className=" hidden md:block text-[13px] text-white/80 max-w-md mt-2">{slide.description}</p>
                 </div>
                 <button
-                  className="absolute bottom-6 right-6 bg-white text-black px-4 py-2 rounded-full hover:opacity-90 transition-opacity"
+                  className="absolute bottom-3 right-3 md:bottom-6 md:right-6 bg-white text-black px-4 py-2 rounded-full hover:opacity-90 transition-opacity"
                   aria-label={`Call to action for ${slide.title}`}
                 >
                   {slide.cta}
