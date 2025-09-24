@@ -2,12 +2,15 @@ import { FC } from "react";
 
 const Gallery: FC = () => {
   return (
-    <section className="mt-12 bg-black text-white py-6 px-6 flex items-center justify-between">
-      <div className="flex items-center gap-3">
-        <img src="/gallery-logo.svg" alt="Gallery" className="w-6 h-6" />
-        <h3 className="font-medium">Krea AI</h3>
+    <section className="py-6 px-6 flex items-center justify-between bg-gray-100 text-black dark:bg-black dark:text-white">
+      {/* Left: Gallery */}
+      <h3 className="text-lg font-semibold">Gallery</h3>
+
+      {/* Right: Legal + Pricing */}
+      <div className="flex items-center gap-6">
+        <span className="text-sm hover:underline cursor-pointer">Legal</span>
+        <span className="text-sm hover:underline cursor-pointer">Pricing</span>
       </div>
-      <span className="text-sm">curated by Mobbin</span>
     </section>
   );
 };
