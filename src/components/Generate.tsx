@@ -39,13 +39,13 @@ const GenerateSection: FC = () => {
           >
             <div className="flex items-center justify-between gap-3 mb-2">
               <div className="">
-                <img src={tool.img} alt={`${tool.name} icon`} className="rounded-lg h-10 w-15 object-contain" />
+                <img src={tool.img} alt={`${tool.name} icon`} className="rounded-lg h-10 w-15 object-cover" />
               </div>
                 <div className=" gap-2">
                   <div className="flex items-center gap-2">
                 <h4 className="font-medium text-gray-800 dark:text-gray-200">{tool.name}</h4>
                 {tool.badge && ( 
-                <span className="text-xs px-2 py-0.5 bg-blue-700 dark:bg-gray-900 text-white dark:text-orange-200 rounded-full">
+                <span className="stext-xs px-2 py-0.5 bg-blue-700 dark:bg-gray-900 text-white dark:text-orange-200 rounded-full">
                   {tool.badge}
                 </span>
               )}
