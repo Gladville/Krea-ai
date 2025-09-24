@@ -39,7 +39,7 @@ const GenerateSection: FC = () => {
           >
             <div className="flex items-center justify-between gap-3 mb-2">
               <div className="">
-                <img src={tool.img} alt={`${tool.name} icon`} className="rounded-2xl h-15 w-20" />
+                <img src={tool.img} alt={`${tool.name} icon`} className="rounded-lg h-10 w-15 object-contain" />
               </div>
                 <div className=" gap-2">
                   <div className="flex items-center gap-2">
