@@ -8,8 +8,8 @@ const Gallery: FC = () => {
 
       {/* Right: Legal + Pricing */}
       <div className="flex items-center gap-6">
-        <span className="text-sm hover:underline cursor-pointer">Legal</span>
-        <span className="text-sm hover:underline cursor-pointer">Pricing</span>
+        <span className="text-sm hover:underline cursor-pointer font-medium hover:rounded-lg hover:bg-gray-200 dark:text-white dark:hover:bg-gray-700 transition-colors py-1 px-2">Legal</span>
+        <span className="text-sm hover:underline cursor-pointer font-medium hover:rounded-lg hover:bg-gray-200 dark:text-white dark:hover:bg-gray-700 transition-colors py-1 px-2">Pricing</span>
       </div>
     </section>
   );
