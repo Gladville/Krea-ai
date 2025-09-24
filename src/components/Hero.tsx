@@ -85,14 +85,14 @@ const handleTouchEnd = (e: React.TouchEvent) => {
     <div className="relative w-full px-4 py-8 dark:bg-gray-900">
       <div className="overflow-hidden rounded-2xl max-w-7xl mx-auto" >
         <div
-          className="flex transition-transform duration-700 ease-in-out space-x-4" style={{ transform: `translateX(-${currentIndex * slideWidth}%)` }}
+          className="flex transition-transform duration-700 ease-in-out" style={{ transform: `translateX(-${currentIndex * slideWidth}%)` }}
   onTouchStart={handleTouchStart}
   onTouchEnd={handleTouchEnd}
         >
           {slides.map((slide) => (
             <div
               key={slide.id}
-              className="min-w-0 flex-shrink-0"
+              className="min-w-0 flex-shrink-0 px-4"
               style={{ width: `${slideWidth}%` }}
               aria-hidden={slides[currentIndex].id !== slide.id}
             >
