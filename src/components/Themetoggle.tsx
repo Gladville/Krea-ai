@@ -1,6 +1,6 @@
 'use client';
 import { useTheme } from "next-themes";
-import { ChevronDown, Bell, Sun, } from "lucide-react";
+import { ChevronDown, Bell, Sun, Moon } from "lucide-react";
 import { MoonIcon } from "@heroicons/react/16/solid";
 
 
@@ -21,7 +21,7 @@ export default function ThemeToggle() {
           className="lucide lucide-moon w-5 h-5"
          />
             ) : (
-                <MoonIcon  width={24}
+                <Moon  width={24}
           height={24}
           viewBox="0 0 24 24"
           fill="none"
