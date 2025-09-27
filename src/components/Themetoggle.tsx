@@ -1,7 +1,7 @@
 'use client';
 import { useTheme } from "next-themes";
-import { ChevronDown, Bell, Sun, Moon } from "lucide-react";
-import { MoonIcon } from "@heroicons/react/16/solid";
+import {Sun, Moon } from "lucide-react";
+
 
 
 export default function ThemeToggle() {
