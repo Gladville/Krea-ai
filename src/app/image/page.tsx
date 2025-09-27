@@ -17,7 +17,7 @@ import Navbar from '@/components/Navbar';
 
 // A simple button component for the action pills
 const ActionButton = ({ icon: Icon, text }: { icon: React.ElementType; text: string;    }) => (
-  <button className="flex items-center gap-2 mt-3 px-3 py-1.5 darK text-black dark:text-white rounded-full text-sm hover:border  bg-white hover:border-gray-400 dark:bg-neutral-700 dark:hover:bg-neutral-600 transition-colors">
+  <button className="flex items-center gap-2 mt-3 px-3 py-1.5 darK text-black dark:text-white rounded-full text-sm hover:border  bg-white hover:border-gray-400 dark:bg-gray-700 dark:hover:bg-neutral-600 transition-colors">
     <Icon size={16} />
     <span>{text}</span>
   </button>
@@ -39,12 +39,12 @@ export default function Home() {
     {/* Main Content */}
 <main className="flex-grow flex items-center justify-center px-4 pb-14">
   <div className="w-full max-w-3xl">
-    <div className="flex flex-col md:flex-row dark:bg-neutral-800 bg-gray-200/100 dark:bg-dark-card rounded-3xl p-4 sm:p-6 shadow-lg gap-4">
+    <div className="flex flex-col md:flex-row dark:bg-gray-800 bg-gray-200/100  rounded-3xl p-4 sm:p-6 shadow-lg gap-4">
       {/* Left section (textarea + controls) */}
       <div className="flex-1">
         <textarea
-          className="w-full h-28 sm:h-36 bg-transparent text-lg text-gray-800 dark:text-neutral-200 focus:outline-none resize-none"
-          defaultValue="Describe an image and click generate"
+          className="w-full h-28 sm:h-36 bg-transparent text-lg text-gray-800 dark:text-neutral-200 focus:outline-none resize-none "
+          placeholder="Describe an image and click generate"
         />
 
         {/* Action buttons row */}
