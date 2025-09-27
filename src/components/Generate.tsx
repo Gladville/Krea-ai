@@ -2,6 +2,8 @@
 import { useState } from "react";
 import { ChevronUp } from "lucide-react";
 import { FC } from "react";
+import React from "react";
+import Link from "next/link";
 
 const tools = [
   { name: "Image", desc: "Generate images with Flux and Ideogram", badge: "", btn: "Open", img: "/assets/image.png" },
@@ -53,10 +55,11 @@ const GenerateSection: FC = () => {
                  <p className="text-xs text-gray-500 dark:text-gray-400 line-clamp-2">{tool.desc}</p>
               </div>
             </div>
-           
-            <button className="mt-2 px-3 bg-gray-100 dark:bg-gray-700 rounded-lg text-sm text-black dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+            <Link href="./image/">
+             <button  className="mt-2 px-3 bg-gray-100 dark:bg-gray-700 rounded-lg text-sm text-black dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors cursor-pointer">
               {tool.btn}
             </button>
+            </Link>
           </div>
         ))}
       </div>
